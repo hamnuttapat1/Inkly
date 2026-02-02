@@ -10,7 +10,10 @@ const App = () => {
       <Routes>
         <Route
           path="/"
-          element={<div className="flex min-h-screen"><Sidebar /><Home /></div>}/>
+          element={<div className="flex min-h-screen"><Sidebar /><Home /></div>} />
+        <Route
+          path="/home"
+          element={<div className="flex min-h-screen"><Sidebar /><Home /></div>} />
         <Route path="/signin" element={<Signin />} />
       </Routes>
     </BrowserRouter>
