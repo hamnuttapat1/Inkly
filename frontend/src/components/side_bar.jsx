@@ -29,14 +29,14 @@ const Side_bar = () => {
         {
             section: 'My content', items: [
                 { label: 'My Notes', icon: <CgNotes size={25} />, path: '/my_notes' },
-                { label: 'Create Note', icon: <IoCreateOutline  size={25} />, path: '/create_note' },
-                { label: 'Bookmarks', icon: <CiBookmarkMinus  size={25} />, path: '/bookmarks' },
+                { label: 'Create Note', icon: <IoCreateOutline size={25} />, path: '/create_note' },
+                { label: 'Bookmarks', icon: <CiBookmarkMinus size={25} />, path: '/bookmarks' },
             ]
         },
         {
             section: 'Account', items: [
                 { label: 'Profile', icon: <CgProfile size={25} />, path: '/profile' },
-                { label: 'Sign Out', icon: <PiSignOutBold  size={25} />, path: '/signout' },
+                { label: 'Sign Out', icon: <PiSignOutBold size={25} />, path: '/signin' },
             ]
         },
     ];
@@ -73,9 +73,14 @@ const Side_bar = () => {
                 <div className='flex flex-col gap-4 items-center mt-8'>
                     {menuItems.map((section) =>
                         section.items.map((item, idx) => (
-                            <button key={idx} onClick={() => navigate(item.path)} className='hover:bg-gray-300 p-2 rounded-lg'>
-                                <div className='opacity-60'>{item.icon}</div>
-                            </button>
+                            <div key={idx} className='relative group'>
+                                <button onClick={() => navigate(item.path)} className='hover:bg-[#E8FFDF] p-2 rounded-lg transition-all duration-200'>
+                                    <div className='opacity-60'>{item.icon}</div>
+                                </button>
+                                <div className='absolute left-16 top-1/2 -translate-y-1/2 bg-gray-800 text-white px-3 py-1 rounded text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none'>
+                                    {item.label}
+                                </div>
+                            </div>
                         ))
                     )}
                 </div>

@@ -1,5 +1,4 @@
 import React from 'react'
-import { FaFireAlt } from "react-icons/fa";
 
 const Home = () => {
   return (
