@@ -1,10 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { PiBookOpenTextLight } from "react-icons/pi";
+import { AiOutlineFire } from "react-icons/ai";
+import { MdQueryBuilder } from "react-icons/md";
+import { GoThumbsup } from "react-icons/go";
 
 const Home = () => {
+  const [sortBy, setSortBy] = useState('hot')
+
+  const buttons = ['hot', 'new', 'top']
+
   return (
-    <div className='w-full h-51.75 bg-gray-100'>
-      <div>
-        <p>Top_Home</p>
+    <div className='w-full h-51.75 bg-white shadow-md'>
+      <div className=''>
+        <div className='flex flex-row items-center ml-7 mt-2 gap-3.75'>
+          <PiBookOpenTextLight size={50} className='opacity-70' />
+          <p className='font-["Julius Sans One"] text-[40px] text-[#3E4A34] font-thin'>HOME</p>
+        </div>
+        <div className='mt-1 ml-7 flex flex-row items-center'>
+          <p className='text-[#124C09] font-["Inter"] text-[24px]'>Sorted by:</p>
+          <div className='flex gap-3 ml-4'>
+            {buttons.map((btn) => (
+              <button
+                key={btn}
+                onClick={() => setSortBy(btn)}
+                className={`px-4 py-2 w-20 rounded-3xl font-["Inter"] text-[20px] capitalize transition-colors flex items-center  ${sortBy === btn
+                  ? 'bg-[#FFB667]/50 text-[#C5620C]'
+                  : 'bg-white '
+                  }`}
+              >
+                {btn === 'hot' && <AiOutlineFire size={15} />}
+                {btn === 'new' && <MdQueryBuilder size={20} />}
+                {btn === 'top' && <GoThumbsup size={15} />}
+                {btn}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className='ml-7'>
+          <p className='text-[#124C09] font-["Inter"] text-[24px]'>Filter by:</p>
+        </div>
       </div>
     </div>
   )
