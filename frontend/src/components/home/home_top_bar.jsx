@@ -4,7 +4,7 @@ import { AiOutlineFire } from "react-icons/ai";
 import { MdQueryBuilder } from "react-icons/md";
 import { GoThumbsup } from "react-icons/go";
 
-const Home = () => {
+const Home_Top_bar = () => {
   const [sortBy, setSortBy] = useState('hot')
 
   const buttons = ['hot', 'new', 'top']
@@ -44,4 +44,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home_Top_bar

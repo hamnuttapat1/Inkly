@@ -1,13 +1,13 @@
 import React from 'react'
 
-const Home_page = () => {
+const Discussion_page = () => {
   return (
     <div className='w-full h-full bg-[#EEF2E1]'>
       <div>
-        <p>Home</p>
+        <p>Discussion</p>
       </div>
     </div>
   )
 }
 
-export default Home_page
+export default Discussion_page
