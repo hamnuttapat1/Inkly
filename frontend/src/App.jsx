@@ -1,7 +1,8 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Sidebar from './components/side_bar'
-import Home from './components/home'
+import Home_Top_bar from './components/home/home_top_bar'
+import Home_page from './components/home/home_page'
 import Signin from './signin'
 import Discussion from './components/discussion'
 import NoteForum from './components/note_forum'
@@ -19,7 +20,7 @@ const App = () => {
         <Route path="/signin" element={<Signin />} />
         <Route
           path="/home"
-          element={<div className="flex min-h-screen"><Sidebar /><Home /></div>} />
+          element={<div className="flex min-h-screen"><Sidebar /><div className="flex flex-col flex-1"><Home_Top_bar /><Home_page /></div></div>} />
         <Route
           path="/discussion"
           element={<div className="flex min-h-screen"><Sidebar /><Discussion /></div>} />
