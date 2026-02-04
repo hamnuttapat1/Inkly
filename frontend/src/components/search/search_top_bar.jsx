@@ -8,7 +8,7 @@ const Search_top_bar = () => {
     const [activeTab, setActiveTab] = useState('all');
 
     return (
-        <div className={`w-full bg-white shadow-md transition-all duration-300 ${showFilters ? 'h-[457px]' : 'h-auto'}`}>
+        <div className={`w-full bg-white shadow-md transition-all duration-300 ${showFilters ? 'h-114.25' : 'h-auto'}`}>
             <div className='flex flex-row mt-2 gap-3 items-center'>
                 <RiSearch2Line size={40} className='opacity-70 ml-7 ' />
                 <p className='font-["Julius Sans One"] text-[40px] text-[#3E4A34] font-thin'>SEARCH</p>
@@ -53,7 +53,7 @@ const Search_top_bar = () => {
                     </div>
                     <div className='flex flex-col gap-1'>
                         <label className='text-[24px] text-[#577F4E] font-["Inter"] mt-0.5'>Year</label>
-                        <input type='text' placeholder='Any' className='px-4 py-[4px] h-9.5 border-2 bg-white border-[#577F4E] rounded-lg font-["Inter"]' />
+                        <input type='text' placeholder='Any' className='px-4 py-1 h-9.5 border-2 bg-white border-[#577F4E] rounded-lg font-["Inter"]' />
                     </div>
                 </div>
             )}
@@ -78,7 +78,7 @@ const Search_top_bar = () => {
                         Discussion
                     </button>
                 </div>
-                <button className='bg-[#34C076] text-white px-[47px] py-2 rounded-sm font-["Inter"] text-[20px] cursor-pointer hover:bg-[#98c752]'>
+                <button className='bg-[#34C076] text-white px-11.75 py-2 rounded-sm font-["Inter"] text-[20px] cursor-pointer hover:bg-[#98c752]'>
                     Search
                 </button>
             </div>
