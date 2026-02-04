@@ -6,7 +6,8 @@ import Home_page from './components/home/home_page'
 import Signin from './signin'
 import Discussion_page from './components/discussion/discussion_page'
 import Discussion_top_bar from './components/discussion/discussion_top_bar'
-import NoteForum from './components/note_forum'
+import NoteForum_page from './components/note_forum/note_forum_page'
+import NoteForum_top_bar from './components/note_forum/note_forum_top_bar'
 import Search from './components/search'
 import Following from './components/following'
 import MyNotes from './components/my_notes'
@@ -27,7 +28,7 @@ const App = () => {
           element={<div className="flex min-h-screen"><Sidebar /><div className="flex flex-col flex-1"><Discussion_top_bar /><Discussion_page /></div></div>} />
         <Route
           path="/note_forum"
-          element={<div className="flex min-h-screen"><Sidebar /><NoteForum /></div>} />
+          element={<div className="flex min-h-screen"><Sidebar /><div className="flex flex-col flex-1"><NoteForum_top_bar /><NoteForum_page /></div></div>} />
         <Route
           path="/search"
           element={<div className="flex min-h-screen"><Sidebar /><Search /></div>} />
