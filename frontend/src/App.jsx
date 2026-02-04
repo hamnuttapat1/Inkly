@@ -8,7 +8,8 @@ import Discussion_page from './components/discussion/discussion_page'
 import Discussion_top_bar from './components/discussion/discussion_top_bar'
 import NoteForum_page from './components/note_forum/note_forum_page'
 import NoteForum_top_bar from './components/note_forum/note_forum_top_bar'
-import Search from './components/search/search'
+import Search_page from './components/search/search_page/'
+import Search_top_bar from './components/search/search_top_bar'
 import Following from './components/following'
 import MyNotes from './components/my_notes'
 import CreateNote from './components/create_note'
@@ -31,7 +32,7 @@ const App = () => {
           element={<div className="flex min-h-screen"><Sidebar /><div className="flex flex-col flex-1"><NoteForum_top_bar /><NoteForum_page /></div></div>} />
         <Route
           path="/search"
-          element={<div className="flex min-h-screen"><Sidebar /><Search /></div>} />
+          element={<div className="flex min-h-screen"><Sidebar /><div className="flex flex-col flex-1"><Search_top_bar /><Search_page /></div></div>} />
         <Route
           path="/following"
           element={<div className="flex min-h-screen"><Sidebar /><Following /></div>} />
