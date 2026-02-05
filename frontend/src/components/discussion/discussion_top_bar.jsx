@@ -6,7 +6,7 @@ const Discussion_top_bar = () => {
     return (
         <div className='w-full h-51.75 bg-white shadow-md '>
             <div className='flex flex-row mt-2 gap-3 items-center'>
-                <BiMessageSquare size={40} className='opacity-70 ml-7 mt-2' />
+                <BiMessageSquare size={40} className='opacity-70 ml-7 mt-1' />
                 <p className='font-["Julius Sans One"] text-[40px] text-[#3E4A34] font-thin'>DISCUSSION FORUM</p>
             </div>
             <div className='ml-7 mr-7 mt-2 flex flex-row gap-3 w- items-center border-2 rounded-2xl p-1 pl-5 '>
@@ -15,7 +15,7 @@ const Discussion_top_bar = () => {
                 </button>
                 <input type='text' placeholder='Search discussions by title, subject, or tags...' className='flex flex-1 items-center bg-transparent font-["Inter"] text-[24px] outline-none border-none focus:outline-none focus:ring-0'></input>
             </div>
-            <div className='ml-12 mt-2 text-[#577F4E] font-["Inter"]'>
+            <div className='ml-12 mt-2.5 text-[#577F4E] font-["Inter"]'>
                 Sorted by:
             </div>
         </div>

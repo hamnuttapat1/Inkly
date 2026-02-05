@@ -14,8 +14,10 @@ import Following_page from './components/following/following_page'
 import Following_top_bar from './components/following/following_top_bar'
 import MyNotes_page from './components/my_notes/my_notes_page'
 import Mynotes_top_bar from './components/my_notes/my_notes_top_bar'
-import CreateNote from './components/create_note'
-import Bookmarks from './components/bookmarks'
+import CreateNote_page from './components/create_note/create_note_page'
+import CreateNote_top_bar from './components/create_note/create_note_top_bar'
+import Bookmarks_page from './components/bookmarks/bookmarks_page'
+import Bookmarks_top_bar from './components/bookmarks/bookmarks_top_bar'
 import Profile from './components/profile'
 const App = () => {
   return (
@@ -43,10 +45,10 @@ const App = () => {
           element={<div className="flex min-h-screen"><Sidebar /><div className="flex flex-col flex-1"><Mynotes_top_bar /><MyNotes_page /></div></div>} />
         <Route
           path="/create_note"
-          element={<div className="flex min-h-screen"><Sidebar /><CreateNote /></div>} />
+          element={<div className="flex min-h-screen"><Sidebar /><div className="flex flex-col flex-1"><CreateNote_top_bar /><CreateNote_page /></div></div>} />
         <Route
           path="/bookmarks"
-          element={<div className="flex min-h-screen"><Sidebar /><Bookmarks /></div>} />
+          element={<div className="flex min-h-screen"><Sidebar /><div className="flex flex-col flex-1"><Bookmarks_top_bar /><Bookmarks_page /></div></div>} />
         <Route
           path="/profile"
           element={<div className="flex min-h-screen"><Sidebar /><Profile /></div>} />

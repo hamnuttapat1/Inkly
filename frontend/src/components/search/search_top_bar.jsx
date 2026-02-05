@@ -78,7 +78,7 @@ const Search_top_bar = () => {
                         Discussion
                     </button>
                 </div>
-                <button className='bg-[#34C076] text-white px-11.75 py-2 rounded-sm font-["Inter"] text-[20px] cursor-pointer hover:bg-[#98c752]'>
+                <button className='bg-[#34C759]/70 text-white px-11.75 py-2 rounded-sm font-["Inter"] text-[20px] cursor-pointer hover:bg-[#34C759] hover:scale-105 transition-all duration-200'>
                     Search
                 </button>
             </div>
