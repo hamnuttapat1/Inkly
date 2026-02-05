@@ -12,7 +12,8 @@ import Search_page from './components/search/search_page/'
 import Search_top_bar from './components/search/search_top_bar'
 import Following_page from './components/following/following_page'
 import Following_top_bar from './components/following/following_top_bar'
-import MyNotes from './components/my_notes'
+import MyNotes_page from './components/my_notes/my_notes_page'
+import Mynotes_top_bar from './components/my_notes/my_notes_top_bar'
 import CreateNote from './components/create_note'
 import Bookmarks from './components/bookmarks'
 import Profile from './components/profile'
@@ -39,7 +40,7 @@ const App = () => {
           element={<div className="flex min-h-screen"><Sidebar /><div className="flex flex-col flex-1"><Following_top_bar /><Following_page /></div></div>} />
         <Route
           path="/my_notes"
-          element={<div className="flex min-h-screen"><Sidebar /><MyNotes /></div>} />
+          element={<div className="flex min-h-screen"><Sidebar /><div className="flex flex-col flex-1"><Mynotes_top_bar /><MyNotes_page /></div></div>} />
         <Route
           path="/create_note"
           element={<div className="flex min-h-screen"><Sidebar /><CreateNote /></div>} />
