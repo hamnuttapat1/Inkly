@@ -18,7 +18,10 @@ import CreateNote_page from './components/create_note/create_note_page'
 import CreateNote_top_bar from './components/create_note/create_note_top_bar'
 import Bookmarks_page from './components/bookmarks/bookmarks_page'
 import Bookmarks_top_bar from './components/bookmarks/bookmarks_top_bar'
-import Profile from './components/profile'
+import Profile_page from './components/profile/profile_page'
+import Profile_top_bar from './components/profile/profile_top_bar'
+import Edit_profile_page from './components/edit_profile/edit_profile_page'
+import Edit_profile_top_bar from './components/edit_profile/edit_profile_top_bar'
 const App = () => {
   return (
     <BrowserRouter>
@@ -51,7 +54,11 @@ const App = () => {
           element={<div className="flex min-h-screen"><Sidebar /><div className="flex flex-col flex-1"><Bookmarks_top_bar /><Bookmarks_page /></div></div>} />
         <Route
           path="/profile"
-          element={<div className="flex min-h-screen"><Sidebar /><Profile /></div>} />
+          element={<div className="flex min-h-screen"><Sidebar /><div className="flex flex-col flex-1"><Profile_top_bar /><Profile_page /></div></div>} />
+        <Route
+          path="/edit_profile"
+          element={<div className="flex min-h-screen"><Sidebar /><div className="flex flex-col flex-1"><Edit_profile_top_bar /><Edit_profile_page /></div></div>} />
+
       </Routes>
     </BrowserRouter>
   )
