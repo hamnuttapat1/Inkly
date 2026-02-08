@@ -11,7 +11,7 @@ const Search_top_bar = () => {
         <div className={`w-full bg-white shadow-md transition-all duration-300 ${showFilters ? 'h-114.25' : 'h-auto'}`}>
             <div className='flex flex-row mt-2 gap-3 items-center'>
                 <RiSearch2Line size={40} className='opacity-70 ml-7 ' />
-                <p className='font-["Julius Sans One"] text-[40px] text-[#3E4A34] font-thin'>SEARCH</p>
+                <p className='font-["Julius Sans One"] text-[40px] text-[#3E4A34] font-thin select-none'>SEARCH</p>
             </div>
             <div className='ml-7 mr-7 mt-2 flex flex-row gap-3 w- items-center border-2 rounded-2xl p-1 pl-5 '>
                 <button className='cursor-pointer'>

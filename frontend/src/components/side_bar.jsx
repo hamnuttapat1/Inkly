@@ -44,7 +44,7 @@ const Side_bar = () => {
     return (
         <div className={`${isOpen ? 'w-100' : 'w-24'} h-screen bg-white shadow-2xl flex flex-col transition-all duration-300`}>
             <div className='flex flex-row items-center justify-between'>
-                <div className='flex flex-row'>
+                <div className='flex flex-row select-none'>
                     {isOpen && <LuPencil size={25} className='mt-14.75 ml-7.75' />}
                     {isOpen && <img src='\src\assets\image.png' className=' w-19 h-10 mt-13.5 ml-5' />}
                 </div>
@@ -54,7 +54,7 @@ const Side_bar = () => {
             </div>
 
             {isOpen ? (
-                <div className='flex flex-col gap-4 overflow-y-auto '>
+                <div className='flex flex-col gap-4 overflow-y-auto select-none'>
                     {menuItems.map((section, idx) => (
                         <div key={idx} className=''>
                             <p className="font-['Kalam'] text-[20px] mt-10.25 ml-7.75">{section.section}</p>
