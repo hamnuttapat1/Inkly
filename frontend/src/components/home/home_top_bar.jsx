@@ -3,6 +3,7 @@ import { PiBookOpenTextLight } from "react-icons/pi";
 import { AiOutlineFire } from "react-icons/ai";
 import { MdQueryBuilder } from "react-icons/md";
 import { GoThumbsup } from "react-icons/go";
+import { FaRegCalendarTimes } from "react-icons/fa";
 
 const Home_Top_bar = () => {
   const [sortBy, setSortBy] = useState('hot')
@@ -28,9 +29,9 @@ const Home_Top_bar = () => {
                   : 'bg-white '
                   }`}
               >
-                {btn === 'hot' && <AiOutlineFire size={15} />}
-                {btn === 'new' && <MdQueryBuilder size={20} />}
-                {btn === 'top' && <GoThumbsup size={15} />}
+                {btn === 'hot' && <AiOutlineFire className="w-4 h-4 shrink-0" />}
+                {btn === 'new' && <FaRegCalendarTimes className="w-3 h-3 shrink-0" />}
+                {btn === 'top' && <GoThumbsup className="w-4 h-4 shrink-0" />}
                 {btn}
               </button>
             ))}
