@@ -10,7 +10,7 @@ import { LuBookmarkMinus } from "react-icons/lu";
 
 const Home_page = () => {
   return (
-    <div className='w-full h-full bg-[#EEF2E1]'>
+    <div className='w-full h-full bg-[#EEF2E1] flex flex-row'>
       <div className='flex w-[350px] h-[480px] mt-[80px] ml-[110px] rounded-[20px] bg-white justify-center'>
         <div className='w-[270px] justify-center'>
           <p className='font-[Inter] text-[24px] text-[#124C09] font-semibold mt-[32.5px]'>
@@ -49,8 +49,9 @@ const Home_page = () => {
               <LuBookmarkMinus size={16} className='text-[#292D32] '/>
             </div>
           </div>
-        </div>  
+        </div>    
       </div>
+      
     </div>
   )
 }
