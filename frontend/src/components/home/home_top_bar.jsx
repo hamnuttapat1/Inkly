@@ -11,7 +11,7 @@ const Home_Top_bar = () => {
   const buttons = ['hot', 'new', 'top']
 
   return (
-    <div className='w-full h-51.75 bg-white shadow-md'>
+    <div className='w-full h-41.75 bg-white shadow-md'>
       <div className=''>
         <div className='flex flex-row items-center ml-7 mt-2 gap-3.75'>
           <PiBookOpenTextLight size={50} className='opacity-70' />

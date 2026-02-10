@@ -6,7 +6,7 @@ const Bookmarks_top_bar = () => {
     const [activeTab, setActiveTab] = useState('all');
 
     return (
-        <div className={`w-full bg-white shadow-md transition-all duration-300 h-68.25`}>
+        <div className={`w-full bg-white shadow-md transition-all duration-300 h-58.25`}>
             <div className='flex flex-row mt-2 gap-3 items-center'>
                 <PiBookmarkSimpleLight size={40} className='opacity-70 ml-7' />
                 <p className='font-["Julius Sans One"] text-[40px] text-[#3E4A34] font-thin select-none'>BOOKMARKS</p>

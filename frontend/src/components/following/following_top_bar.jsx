@@ -4,7 +4,7 @@ import { GoPeople } from "react-icons/go";
 
 const Follow_top_bar = () => {
     return (
-        <div className='w-full h-51.75 bg-white shadow-md '>
+        <div className='w-full h-41.75 bg-white shadow-md '>
             <div className='flex flex-row mt-2 gap-3 items-center'>
                 <GoPeople size={40} className='opacity-70 ml-7' />
                 <p className='font-["Julius Sans One"] text-[40px] text-[#3E4A34] font-thin select-none'>FOLLOWING</p>

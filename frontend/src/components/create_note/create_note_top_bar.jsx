@@ -3,7 +3,7 @@ import { RiStickyNoteAddLine } from "react-icons/ri";
 
 const Create_note_top_bar = () => {
     return (
-        <div className='w-full h-29.5 bg-white shadow-md '>
+        <div className='w-full h-19.5 bg-white shadow-md '>
             <div className='flex flex-row  gap-3 items-center mt-5'>
                 <RiStickyNoteAddLine size={40} className='opacity-70 ml-7' />
                 <p className='font-["Julius Sans One"] text-[40px] text-[#3E4A34] font-thin select-none'>CREATE NEW NOTES</p>

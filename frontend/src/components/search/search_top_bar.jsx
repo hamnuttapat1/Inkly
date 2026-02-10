@@ -8,7 +8,7 @@ const Search_top_bar = () => {
     const [activeTab, setActiveTab] = useState('all');
 
     return (
-        <div className={`w-full bg-white shadow-md transition-all duration-300 ${showFilters ? 'h-114.25' : 'h-auto'}`}>
+        <div className={`w-full bg-white shadow-md transition-all duration-300 ${showFilters ? 'h-89' : 'h-55'}`}>
             <div className='flex flex-row mt-2 gap-3 items-center'>
                 <RiSearch2Line size={40} className='opacity-70 ml-7 ' />
                 <p className='font-["Julius Sans One"] text-[40px] text-[#3E4A34] font-thin select-none'>SEARCH</p>
@@ -57,7 +57,7 @@ const Search_top_bar = () => {
                     </div>
                 </div>
             )}
-            <div className='flex flex-row justify-between items-center ml-7 mr-7 mt-2 mb-2 border-b-2 border-none'>
+            <div className='flex flex-row justify-between items-center ml-7 mr-7 mt-3 mb-2 border-b-2 border-none'>
                 <div className='flex flex-row gap-8'>
                     <button
                         onClick={() => setActiveTab('all')}

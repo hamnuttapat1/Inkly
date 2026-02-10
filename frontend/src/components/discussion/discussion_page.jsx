@@ -7,7 +7,7 @@ import { LuEye } from "react-icons/lu";
 import { MdOutlineFileDownload } from "react-icons/md";
 const Discussion_page = () => {
     return (
-        <div className='w-full h-full bg-[#EEF2E1]'>
+        <div className='w-full h-full bg-[#EEF2E1] overflow-auto'>
             <div className='flex flex-col w-full h-[180px] max-w-[calc(100%-110px)] mx-[55px] my-[70px] bg-white rounded-[15px] '>
                 <div className='flex justify-between flex-row w-full'>
                     <div className='mt-[7px] ml-[15px] flex flex-row justify-center gap-[20px]'>
@@ -38,25 +38,25 @@ const Discussion_page = () => {
                     </div>
                     <div className='flex flex-row gap-[26px] mr-[100px] mt-[15px] gap-[25px]'>
                         <div className='gap-[8px] items-center flex flex-row'>
-                            <IoHeartOutline size={16} className='text-[#292D32]'/>
+                            <IoHeartOutline size={16} className='text-[#292D32]' />
                             <p className='font-["Inter"] text-[14px] font-regular'>332</p>
                         </div>
                         <div className='gap-[8px] items-center flex flex-row'>
-                            <GoComment size={16} className='text-[#292D32]'/>
+                            <GoComment size={16} className='text-[#292D32]' />
                             <p className='font-["Inter"] text-[14px] font-regular'>44</p>
                         </div>
                         <div className='gap-[8px] items-center flex flex-row'>
-                            <LuEye size={16} className='text-[#292D32]'/>
+                            <LuEye size={16} className='text-[#292D32]' />
                             <p className='font-["Inter"] text-[14px] font-regular'>1277</p>
                         </div>
                         <div className='gap-[8px] items-center flex flex-row'>
-                            <MdOutlineFileDownload size={16} className='text-[#292D32]'/>
+                            <MdOutlineFileDownload size={16} className='text-[#292D32]' />
                             <p className='font-["Inter"] text-[14px] font-regular'>156</p>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
         </div>
     )
 }

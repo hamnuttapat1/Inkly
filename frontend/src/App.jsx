@@ -30,34 +30,153 @@ const App = () => {
         <Route path="/signin" element={<Signin />} />
         <Route
           path="/home"
-          element={<div className="flex min-h-screen"><Sidebar /><div className="flex flex-col flex-1"><Home_Top_bar /><Home_page /></div></div>} />
+          element={
+            <div className="flex h-screen overflow-hidden">
+              <Sidebar />
+              <div className="flex flex-col flex-1 min-h-0">
+                <div className="shrink-0">
+                  <Home_Top_bar />
+                </div>
+                <div className="flex-1 min-h-0 overflow-y-auto">
+                  <Home_page />
+                </div>
+              </div>
+            </div>
+          }
+        />
         <Route
           path="/discussion"
-          element={<div className="flex min-h-screen"><Sidebar /><div className="flex flex-col flex-1"><Discussion_top_bar /><Discussion_page /></div></div>} />
+          element={<div className="flex h-screen overflow-hidden"><Sidebar /><div className="flex flex-col flex-1 min-h-0"><div className="shrink-0"><Discussion_top_bar /></div><div className="flex-1 min-h-0 overflow-y-auto"><Discussion_page /></div></div></div>
+          }
+        />
         <Route
           path="/note_forum"
-          element={<div className="flex min-h-screen"><Sidebar /><div className="flex flex-col flex-1"><NoteForum_top_bar /><NoteForum_page /></div></div>} />
+          element={
+            <div className="flex h-screen overflow-hidden">
+              <Sidebar />
+              <div className="flex flex-col flex-1 min-h-0">
+                <div className="shrink-0">
+                  <NoteForum_top_bar />
+                </div>
+                <div className="flex-1 min-h-0 overflow-y-auto">
+                  <NoteForum_page />
+                </div>
+              </div>
+            </div>
+          }
+        />
         <Route
           path="/search"
-          element={<div className="flex min-h-screen"><Sidebar /><div className="flex flex-col flex-1"><Search_top_bar /><Search_page /></div></div>} />
+          element={
+            <div className="flex h-screen overflow-hidden">
+              <Sidebar />
+              <div className="flex flex-col flex-1 min-h-0">
+                <div className="shrink-0">
+                  <Search_top_bar />
+                </div>
+                <div className="flex-1 min-h-0 overflow-y-auto">
+                  <Search_page />
+                </div>
+              </div>
+            </div>
+          }
+        />
         <Route
           path="/following"
-          element={<div className="flex min-h-screen"><Sidebar /><div className="flex flex-col flex-1"><Following_top_bar /><Following_page /></div></div>} />
+          element={
+            <div className="flex h-screen overflow-hidden">
+              <Sidebar />
+              <div className="flex flex-col flex-1 min-h-0">
+                <div className="shrink-0">
+                  <Following_top_bar />
+                </div>
+                <div className="flex-1 min-h-0 overflow-y-auto">
+                  <Following_page />
+                </div>
+              </div>
+            </div>
+          }
+        />
         <Route
           path="/my_notes"
-          element={<div className="flex min-h-screen"><Sidebar /><div className="flex flex-col flex-1"><Mynotes_top_bar /><MyNotes_page /></div></div>} />
+          element={
+            <div className="flex h-screen overflow-hidden">
+              <Sidebar />
+              <div className="flex flex-col flex-1 min-h-0">
+                <div className="shrink-0">
+                  <Mynotes_top_bar />
+                </div>
+                <div className="flex-1 min-h-0 overflow-y-auto">
+                  <MyNotes_page />
+                </div>
+              </div>
+            </div>
+          }
+        />
         <Route
           path="/create_note"
-          element={<div className="flex min-h-screen"><Sidebar /><div className="flex flex-col flex-1"><CreateNote_top_bar /><CreateNote_page /></div></div>} />
+          element={
+            <div className="flex h-screen overflow-hidden">
+              <Sidebar />
+              <div className="flex flex-col flex-1 min-h-0">
+                <div className="shrink-0">
+                  <CreateNote_top_bar />
+                </div>
+                <div className="flex-1 min-h-0 overflow-y-auto">
+                  <CreateNote_page />
+                </div>
+              </div>
+            </div>
+          }
+        />
         <Route
           path="/bookmarks"
-          element={<div className="flex min-h-screen"><Sidebar /><div className="flex flex-col flex-1"><Bookmarks_top_bar /><Bookmarks_page /></div></div>} />
+          element={
+            <div className="flex h-screen overflow-hidden">
+              <Sidebar />
+              <div className="flex flex-col flex-1 min-h-0">
+                <div className="shrink-0">
+                  <Bookmarks_top_bar />
+                </div>
+                <div className="flex-1 min-h-0 overflow-y-auto">
+                  <Bookmarks_page />
+                </div>
+              </div>
+            </div>
+          }
+        />
         <Route
           path="/profile"
-          element={<div className="flex min-h-screen"><Sidebar /><div className="flex flex-col flex-1"><Profile_top_bar /><Profile_page /></div></div>} />
+          element={
+            <div className="flex h-screen overflow-hidden">
+              <Sidebar />
+              <div className="flex flex-col flex-1 min-h-0">
+                <div className="shrink-0">
+                  <Profile_top_bar />
+                </div>
+                <div className="flex-1 min-h-0 overflow-y-auto">
+                  <Profile_page />
+                </div>
+              </div>
+            </div>
+          }
+        />
         <Route
           path="/edit_profile"
-          element={<div className="flex min-h-screen"><Sidebar /><div className="flex flex-col flex-1"><Edit_profile_top_bar /><Edit_profile_page /></div></div>} />
+          element={
+            <div className="flex h-screen overflow-hidden">
+              <Sidebar />
+              <div className="flex flex-col flex-1 min-h-0">
+                <div className="shrink-0">
+                  <Edit_profile_top_bar />
+                </div>
+                <div className="flex-1 min-h-0 overflow-y-auto">
+                  <Edit_profile_page />
+                </div>
+              </div>
+            </div>
+          }
+        />
 
       </Routes>
     </BrowserRouter>
