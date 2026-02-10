@@ -46,7 +46,18 @@ const App = () => {
         />
         <Route
           path="/discussion"
-          element={<div className="flex h-screen overflow-hidden"><Sidebar /><div className="flex flex-col flex-1 min-h-0"><div className="shrink-0"><Discussion_top_bar /></div><div className="flex-1 min-h-0 overflow-y-auto"><Discussion_page /></div></div></div>
+          element={
+            <div className="flex h-screen overflow-hidden">
+              <Sidebar />
+              <div className="flex flex-col flex-1 min-h-0">
+                <div className="shrink-0">
+                  <Discussion_top_bar />
+                </div>
+                <div className="flex-1 min-h-0 overflow-y-auto">
+                  <Discussion_page />
+                </div>
+              </div>
+            </div>
           }
         />
         <Route

@@ -18,13 +18,13 @@ const Home_Top_bar = () => {
           <p className='font-["Julius Sans One"] text-[40px] text-[#3E4A34] font-thin select-none'>HOME</p>
         </div>
         <div className='mt-1 ml-7 flex flex-row items-center'>
-          <p className='text-[#124C09] font-["Inter"] text-[24px]'>Sorted by:</p>
+          <p className='text-[#124C09] font-["Inter"] text-[24px] select-none'>Sorted by:</p>
           <div className='flex gap-3 ml-4'>
             {buttons.map((btn) => (
               <button
                 key={btn}
                 onClick={() => setSortBy(btn)}
-                className={`px-4 py-2 w-20 rounded-3xl font-["Inter"] text-[20px] capitalize transition-colors flex items-center  ${sortBy === btn
+                className={`px-4 py-2 w-20 rounded-3xl font-["Inter"] text-[20px] capitalize transition-colors flex items-center select-none ${sortBy === btn
                   ? 'bg-[#FFB667]/50 text-[#C5620C]'
                   : 'bg-white '
                   }`}
@@ -38,7 +38,7 @@ const Home_Top_bar = () => {
           </div>
         </div>
         <div className='ml-7'>
-          <p className='text-[#124C09] font-["Inter"] text-[24px]'>Filter by:</p>
+          <p className='text-[#124C09] font-["Inter"] text-[24px] select-none'>Filter by:</p>
         </div>
       </div>
     </div>

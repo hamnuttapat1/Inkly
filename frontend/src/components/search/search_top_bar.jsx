@@ -17,47 +17,47 @@ const Search_top_bar = () => {
                 <button className='cursor-pointer'>
                     <RiSearch2Line size={30} className='flex opacity-50' />
                 </button>
-                <input type='text' placeholder='Search discussions by title, subject, or tags...' className='flex flex-1 items-center bg-transparent font-["Inter"] text-[24px] outline-none border-none focus:outline-none focus:ring-0'></input>
+                <input type='text' placeholder='Search discussions by title, subject, or tags...' className='select-none flex flex-1 items-center bg-transparent font-["Inter"] text-[24px] outline-none border-none focus:outline-none focus:ring-0'></input>
             </div>
-            <div className='ml-7 mt-2 text-[#577F4E] font-["Inter"] flex fex-row items-center gap-3'>
+            <div className='ml-7 mt-2 text-[#577F4E] font-["Inter"] flex fex-row items-center gap-3 select-none'>
                 <button onClick={() => setShowFilters(!showFilters)} className='text-[#577F4E] font-["Inter"]'>
                     {showFilters ? <RxCaretUp strokeWidth={2} className='' /> : <RxCaretDown strokeWidth={2} className='' />}
                 </button>
                 <p>{showFilters ? 'Hide Filters' : 'Show Filters'}</p>
             </div>
             {showFilters && (
-                <div className='flex flex-row gap-4 ml-7 pt-7.25 pl-14.75 pb-7.25 bg-[#F8F6F6] rounded-[15px] items-center'>
+                <div className='flex flex-row gap-4 ml-7 pt-7.25 pl-14.75 pb-7.25 bg-[#F8F6F6] rounded-[15px] items-center select-none'>
                     <div className='flex flex-col gap-1'>
                         <label className='text-[24px] text-[#577F4E] font-["Inter"]'>Sort by</label>
-                        <select className='px-4 py-2 border-2 bg-white border-[#577F4E] rounded-lg font-["Inter"] cursor-pointer'>
+                        <select className='px-4 py-2 border-2 bg-white border-[#577F4E] rounded-lg font-["Inter"] cursor-pointer select-none'>
                             <option>Latest upload</option>
                         </select>
                     </div>
                     <div className='flex flex-col gap-1'>
                         <label className='text-[24px] text-[#577F4E] font-["Inter"]'>Filter tags</label>
-                        <select className='px-4 py-2 border-2 bg-white border-[#577F4E] rounded-lg font-["Inter"] cursor-pointer'>
+                        <select className='px-4 py-2 border-2 bg-white border-[#577F4E] rounded-lg font-["Inter"] cursor-pointer select-none'>
                             <option>Include any</option>
                         </select>
                     </div>
                     <div className='flex flex-col gap-1'>
                         <label className='text-[24px] text-[#577F4E] font-["Inter"]'>Exclude tags</label>
-                        <select className='px-4 py-2 border-2 bg-white border-[#577F4E] rounded-lg font-["Inter"] cursor-pointer'>
+                        <select className='px-4 py-2 border-2 bg-white border-[#577F4E] rounded-lg font-["Inter"] cursor-pointer select-none'>
                             <option>Exclude any</option>
                         </select>
                     </div>
                     <div className='flex flex-col gap-1'>
                         <label className='text-[24px] text-[#577F4E] font-["Inter"]'>Subject</label>
-                        <select className='px-4 py-2 border-2 bg-white border-[#577F4E] rounded-lg font-["Inter"] cursor-pointer'>
+                        <select className='px-4 py-2 border-2 bg-white border-[#577F4E] rounded-lg font-["Inter"] cursor-pointer select-none'>
                             <option>Any</option>
                         </select>
                     </div>
                     <div className='flex flex-col gap-1'>
                         <label className='text-[24px] text-[#577F4E] font-["Inter"] mt-0.5'>Year</label>
-                        <input type='text' placeholder='Any' className='px-4 py-1 h-9.5 border-2 bg-white border-[#577F4E] rounded-lg font-["Inter"]' />
+                        <input type='text' placeholder='Any' className='px-4 py-1 h-9.5 border-2 bg-white border-[#577F4E] rounded-lg font-["Inter"] select-none' />
                     </div>
                 </div>
             )}
-            <div className='flex flex-row justify-between items-center ml-7 mr-7 mt-3 mb-2 border-b-2 border-none'>
+            <div className='flex flex-row justify-between items-center ml-7 mr-7 mt-3 mb-2 border-b-2 border-none select-none'>
                 <div className='flex flex-row gap-8'>
                     <button
                         onClick={() => setActiveTab('all')}

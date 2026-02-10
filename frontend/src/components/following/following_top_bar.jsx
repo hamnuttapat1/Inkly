@@ -13,7 +13,7 @@ const Follow_top_bar = () => {
                 <button className='cursor-pointer'>
                     <RiSearch2Line size={30} className='flex opacity-50' />
                 </button>
-                <input type='text' placeholder='Search discussions by title, subject, or tags...' className='flex flex-1 items-center bg-transparent font-["Inter"] text-[24px] outline-none border-none focus:outline-none focus:ring-0'></input>
+                <input type='text' placeholder='Search discussions by title, subject, or tags...' className='select-none flex flex-1 items-center bg-transparent font-["Inter"] text-[24px] outline-none border-none focus:outline-none focus:ring-0'></input>
             </div>
 
         </div>

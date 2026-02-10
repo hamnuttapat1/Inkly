@@ -18,10 +18,10 @@ const Discussion_page = () => {
                         </div>
                     </div>
                     <div className='mt-[10px] mr-[48px]'>
-                        <div className='w-[185px] h-[35px] bg-[#B3B3B6]/60 text-white items-center flex justify-center rounded-[15px] gap-[10px] select-none'>
+                        <button className='w-[185px] h-[35px] bg-[#B3B3B6]/60 text-white items-center flex justify-center rounded-[15px] gap-[10px] cursor-pointer select-none hover:bg-[#B3B3B6]/80'>
                             <GoPaperclip size={16} className='text-white' />
                             <p>1 Attachment(s)</p>
-                        </div>
+                        </button>
                     </div>
                 </div>
                 <div className='mt-[23px] ml-[15px]'>
@@ -37,21 +37,21 @@ const Discussion_page = () => {
                         <p className='flex w-auto bg-[#E8FFDF] items-center px-[15px] rounded-[15px] text-[#124C09]/70 font-["Inter"] text-[14px] font-regular'>#Math</p>
                     </div>
                     <div className='flex flex-row gap-[26px] mr-[100px] mt-[15px] gap-[25px]'>
-                        <div className='gap-[8px] items-center flex flex-row'>
-                            <IoHeartOutline size={16} className='text-[#292D32]' />
-                            <p className='font-["Inter"] text-[14px] font-regular'>332</p>
-                        </div>
-                        <div className='gap-[8px] items-center flex flex-row'>
+                        <button className='cursor-pointer gap-[8px] items-center flex flex-row'>
+                            <IoHeartOutline size={16} className='text-[#292D32] ' />
+                            <p className='font-["Inter"] text-[14px] font-regular select-none'>332</p>
+                        </button>
+                        <button className='cursor-pointer gap-[8px] items-center flex flex-row'>
                             <GoComment size={16} className='text-[#292D32]' />
-                            <p className='font-["Inter"] text-[14px] font-regular'>44</p>
-                        </div>
+                            <p className='font-["Inter"] text-[14px] font-regular select-none'>44</p>
+                        </button>
                         <div className='gap-[8px] items-center flex flex-row'>
                             <LuEye size={16} className='text-[#292D32]' />
-                            <p className='font-["Inter"] text-[14px] font-regular'>1277</p>
+                            <p className='font-["Inter"] text-[14px] font-regular select-none'>1277</p>
                         </div>
                         <div className='gap-[8px] items-center flex flex-row'>
                             <MdOutlineFileDownload size={16} className='text-[#292D32]' />
-                            <p className='font-["Inter"] text-[14px] font-regular'>156</p>
+                            <p className='font-["Inter"] text-[14px] font-regular select-none'>156</p>
                         </div>
                     </div>
                 </div>

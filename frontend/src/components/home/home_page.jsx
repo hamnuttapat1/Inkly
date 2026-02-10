@@ -24,7 +24,7 @@ const Home_page = () => {
             Detailed diagrams and explanations of cell division processes. Comparison between mitosis and meiosis with color-coded phases and...
           </p>
           <div className='w-full flex justify-center'>
-            <button className='flex flex-row w-[184px] h-[35px] items-center mt-[13px] justify-center bg-[#b3b3b6a4] rounded-[15px] gap-[10px] select-none'>
+            <button className='flex flex-row w-[184px] h-[35px] items-center mt-[13px] justify-center bg-[#b3b3b6a4] rounded-[15px] gap-[10px] cursor-pointer select-none hover:bg-[#B3B3B6]/80'>
               <GoPaperclip size={14} className='text-white'/>
               <p className='text-white font-[Inter] text-[16px] font-semibold'>3 Attchment(s)</p>
             </button>
@@ -37,16 +37,26 @@ const Home_page = () => {
           </p>
           <div className='flex flex-row justify-between mt-[17.5px]'>
             <div className='gap-[7px] flex flex-row items-center'>
-              <IoHeartOutline size={16} className='text-[#292D32]'/>
-              <p className='font-[Inter] text-[16px] font-semibold text-[#124C09]'>222</p>
-              <PiChatText size={16} className='text-[#292D32]'/>
-              <p className='font-[Inter] text-[16px] font-semibold text-[#124C09]'>34</p>
-              <LuEye size={16} className='text-[#292D32]'/>
-              <p className='font-[Inter] text-[16px] font-semibold text-[#124C09]'>1.2k</p>
+              <button className='cursor-pointer flex flex-row items-center gap-[7px]'>
+                <IoHeartOutline size={16} className='text-[#292D32]'/>
+                <p className='font-[Inter] text-[16px] font-semibold text-[#124C09] select-none'>222</p>
+              </button>
+              <button className='cursor-pointer flex flex-row items-center gap-[7px]'>
+                <PiChatText size={16} className='text-[#292D32]'/>
+                <p className='font-[Inter] text-[16px] font-semibold text-[#124C09] select-none'>34</p>
+              </button>
+              <div className='flex flex-row items-center gap-[7px]'> 
+                <LuEye size={16} className='text-[#292D32]'/>
+                <p className='font-[Inter] text-[16px] font-semibold text-[#124C09] select-none'>1.2k</p>
+               </div>
             </div>
             <div className='flex flex-row items-center gap-[22px]'>
+              <button className='cursor-pointer'>
               <MdOutlineFileDownload size={16} className='text-[#292D32] '/>
+              </button>
+              <button className='cursor-pointer'>
               <LuBookmarkMinus size={16} className='text-[#292D32] '/>
+              </button>
             </div>
           </div>
         </div>    

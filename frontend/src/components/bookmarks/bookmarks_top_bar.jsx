@@ -15,9 +15,9 @@ const Bookmarks_top_bar = () => {
                 <button className='cursor-pointer'>
                     <RiSearch2Line size={30} className='flex opacity-50' />
                 </button>
-                <input type='text' placeholder='Search discussions by title, subject, or tags...' className='flex flex-1 items-center bg-transparent font-["Inter"] text-[24px] outline-none border-none focus:outline-none focus:ring-0'></input>
+                <input type='text' placeholder='Search discussions by title, subject, or tags...' className='select-none flex flex-1 items-center bg-transparent font-["Inter"] text-[24px] outline-none border-none focus:outline-none focus:ring-0'></input>
             </div>
-            <div className='flex flex-row justify-between items-center ml-7 mr-7 mt-2 mb-2 border-b-2 border-none'>
+            <div className='flex flex-row justify-between items-center ml-7 mr-7 mt-2 mb-2 border-b-2 border-none select-none'>
                 <div className='flex flex-row gap-8'>
                     <button
                         onClick={() => setActiveTab('all')}
@@ -39,9 +39,9 @@ const Bookmarks_top_bar = () => {
                     </button>
                 </div>
             </div>
-            <div className='ml-7 mt-5 mb-5 gap-5 text-[#577F4E] font-["Inter"] flex flex-row items-center'>
+            <div className='ml-7 mt-5 mb-5 gap-5 text-[#577F4E] font-["Inter"] flex flex-row items-center select-none'>
                 <p className='mt-0.5'>Sorted by:</p>
-                <select className=' bg-white border border-gray-300 rounded-md  text-[#577F4E] font-["Inter"]'>
+                <select className=' bg-white border border-gray-300 rounded-md  text-[#577F4E] font-["Inter"] select-none'>
                     <option>Date create</option>
                     <option>Most Recent</option>
                     <option>Title A-Z</option>
