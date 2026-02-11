@@ -16,7 +16,7 @@ const Search_page = () => {
                         Biology : Mitosis and Meiosis
                     </p>
                     <div className='mt-[20px] flex flex-row items-center gap-[15px]'>
-                        <GiPlainCircle size={27} className='text-[#577F4E]' />
+                        <GiPlainCircle size={15} className='text-[#577F4E]' />
                         <p className='font-[Inter] text-[24px] text-[#124C09] font-semibold'>Student 1</p>
                     </div>
                     <p className='mt-[15px] font-[Inter] text-[16px] text-[#124C09] font-semibold'>
