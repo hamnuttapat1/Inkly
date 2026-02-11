@@ -42,7 +42,7 @@ const Side_bar = () => {
     ];
 
     return (
-        <div className={`${isOpen ? 'w-100' : 'w-24'} h-screen bg-white shadow-2xl flex flex-col transition-all duration-300`}>
+        <div className={`${isOpen ? 'w-75' : 'w-24'} h-screen bg-white shadow-2xl flex flex-col transition-all duration-300`}>
             <div className='flex flex-row items-center justify-between'>
                 <div className='flex flex-row select-none'>
                     {isOpen && <LuPencil size={25} className='mt-14.75 ml-7.75' />}
@@ -61,7 +61,7 @@ const Side_bar = () => {
                             <div className='gap-2'>
                                 {section.items.map((item, itemIdx) => (
                                     <button key={itemIdx} onClick={() => navigate(item.path)} className='flex flex-row items-center gap-10.5 mt-[29.5px] hover:bg-[#E8FFDF] w-full h-8.75 rounded-2xl transition-all duration-200 '>
-                                        <div className='ml-18.75 opacity-45'>{item.icon}</div>
+                                        <div className='ml-13.75 opacity-45'>{item.icon}</div>
                                         <p className="font-['Inter'] text-[24px] ">{item.label}</p>
                                     </button>
                                 ))}

@@ -26,7 +26,19 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Signin />} />
+        <Route path="/" element={
+            <div className="flex h-screen overflow-hidden">
+              <Sidebar />
+              <div className="flex flex-col flex-1 min-h-0">
+                <div className="shrink-0">
+                  <Home_Top_bar />
+                </div>
+                <div className="flex-1 min-h-0 overflow-y-auto">
+                  <Home_page />
+                </div>
+              </div>
+            </div>
+          } />
         <Route path="/signin" element={<Signin />} />
         <Route
           path="/home"
