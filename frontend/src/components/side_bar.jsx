@@ -45,10 +45,10 @@ const Side_bar = () => {
         <div className={`${isOpen ? 'w-[260px]' : 'w-[80px]'} h-screen bg-white shadow-2xl flex flex-col transition-all duration-300`}>
             <div className='flex flex-row items-center justify-between'>
                 <div className='flex flex-row select-none'>
-                    {isOpen && <LuPencil size={20} className='mt-[44px] ml-[24px]' />}
-                    {isOpen && <img src='\src\assets\image.png' className='w-[64px] h-[32px] mt-[40px] ml-[16px]' />}
+                    {isOpen && <LuPencil size={20} className='mt-[34px] ml-[24px]' />}
+                    {isOpen && <img src='\src\assets\image.png' className='w-[64px] h-[32px] mt-[30px] ml-[16px]' />}
                 </div>
-                <button onClick={() => setIsOpen(!isOpen)} className='mt-[36px] mr-[16px] cursor-pointer hover:bg-[#E8FFDF] rounded-xl'>
+                <button onClick={() => setIsOpen(!isOpen)} className='mt-[26px] mr-[16px] cursor-pointer hover:bg-[#E8FFDF] rounded-xl'>
                     <FiSidebar size={36} />
                 </button>
             </div>
