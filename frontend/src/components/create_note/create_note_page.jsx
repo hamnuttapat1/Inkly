@@ -4,7 +4,7 @@ const Create_note_page = () => {
   return (
     <div className='w-full h-full bg-[#EEF2E1] overflow-auto'>
       <div className=''>
-        <p>Kla</p>
+        <p>create_note</p>
       </div>
     </div>
   )
