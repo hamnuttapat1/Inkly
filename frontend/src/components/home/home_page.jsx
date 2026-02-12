@@ -10,7 +10,7 @@ import { LuBookmarkMinus } from "react-icons/lu";
 
 const Home_page = () => {
     return (
-        <div className='w-full h-full bg-[#EEF2E1] flex flex-row overflow-auto'>
+        <div className='w-full h-full bg-[#EEF2E1] grid grid-cols-3 flex flex-row overflow-auto'>
             <div className='flex w-[300px] h-[400px] mt-[60px] ml-[80px] rounded-[16px] bg-white justify-center'>
                 <div className='w-[240px] justify-center'>
                     <p className='font-[Inter] text-[20px] text-[#124C09] font-semibold mt-[24px]'>

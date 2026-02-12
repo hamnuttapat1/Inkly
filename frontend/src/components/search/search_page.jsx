@@ -9,7 +9,7 @@ import { LuBookmarkMinus } from "react-icons/lu";
 
 const Search_page = () => {
     return (
-        <div className='flex flex-row w-full h-full bg-[#EEF2E1] overflow-auto'>
+        <div className='flex flex-row w-full h-full bg-[#EEF2E1] grid grid-cols-3 overflow-auto'>
             <div className='flex w-[300px] h-[400px] mt-[60px] ml-[80px] rounded-[16px] bg-white justify-center'>
                 <div className='w-[240px] justify-center'>
                     <p className='font-[Inter] text-[20px] text-[#124C09] font-semibold mt-[24px]'>
