@@ -6,62 +6,88 @@ import { PiChatText } from "react-icons/pi";
 import { LuEye } from "react-icons/lu";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { LuBookmarkMinus } from "react-icons/lu";
-
+import { otherNotes } from '../../constants/Others_note_data';
 
 const Home_page = () => {
+    // Helper function to format large numbers (e.g., 1132 -> 1.1k)
+    const formatViews = (views) => {
+        if (views >= 1000) {
+            return (views / 1000).toFixed(1) + 'k';
+        }
+        return views.toString();
+    };
+
     return (
-        <div className='w-full h-full bg-[#EEF2E1] grid grid-cols-3 flex flex-row overflow-auto'>
-            <div className='flex w-[300px] h-[400px] mt-[60px] ml-[80px] rounded-[16px] bg-white justify-center'>
-                <div className='w-[240px] justify-center'>
-                    <p className='font-[Inter] text-[20px] text-[#124C09] font-semibold mt-[24px]'>
-                        Biology : Mitosis and Meiosis
-                    </p>
-                    <div className='mt-[16px] flex flex-row items-center gap-[10px]'>
-                        <GiPlainCircle size={12} className='text-[#577F4E]' />
-                        <p className='font-[Inter] text-[18px] text-[#124C09] font-semibold'>Student 1</p>
-                    </div>
-                    <p className='mt-[12px] font-[Inter] text-[14px] text-[#124C09] font-semibold'>
-                        Detailed diagrams and explanations of cell division processes. Comparison between mitosis and meiosis with color-coded phases and...
-                    </p>
-                    <div className='w-full flex justify-center'>
-                        <button className='flex flex-row w-[160px] h-[30px] items-center mt-[10px] justify-center bg-[#b3b3b6a4] rounded-[12px] gap-[8px] cursor-pointer select-none hover:bg-[#B3B3B6]/80'>
-                            <GoPaperclip size={12} className='text-white' />
-                            <p className='text-white font-[Inter] text-[14px] font-semibold'>3 Attchment(s)</p>
-                        </button>
-                    </div>
-                    <div className='flex flex-row mt-[12px] items-center gap-[8px]'>
-                        <p className='flex h-[28px] w-auto bg-[#E8FFDF] items-center px-[8px] rounded-[12px] text-[#124C09]/70 text-[13px]'>#Biology</p>
-                        <p className='flex h-[28px] w-auto bg-[#E8FFDF] items-center px-[8px] rounded-[12px] text-[#124C09]/70 text-[13px]'>#Cell</p>
-                    </div>
-                    <p className='mt-[20px] w-full border-[1px]'>
-                    </p>
-                    <div className='flex flex-row justify-between mt-[12px]'>
-                        <div className='gap-[6px] flex flex-row items-center'>
-                            <button className='cursor-pointer flex flex-row items-center gap-[6px]'>
-                                <IoHeartOutline size={14} className='text-[#292D32]' />
-                                <p className='font-[Inter] text-[14px] font-semibold text-[#124C09] select-none'>222</p>
-                            </button>
-                            <button className='cursor-pointer flex flex-row items-center gap-[6px]'>
-                                <PiChatText size={14} className='text-[#292D32]' />
-                                <p className='font-[Inter] text-[14px] font-semibold text-[#124C09] select-none'>34</p>
-                            </button>
-                            <div className='flex flex-row items-center gap-[6px]'>
-                                <LuEye size={14} className='text-[#292D32]' />
-                                <p className='font-[Inter] text-[14px] font-semibold text-[#124C09] select-none'>1.2k</p>
+        <div className='w-full h-full bg-[#EEF2E1] overflow-auto'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-8'>
+                {otherNotes.map((note) => (
+                    <div key={note.id} className='bg-white rounded-xl p-6 shadow-sm flex flex-col'>
+                        {/* Title */}
+                        <h3 className='text-lg font-semibold text-gray-800 mb-3'>{note.title}</h3>
+                        
+                        {/* Author */}
+                        <div className='flex items-center gap-2 mb-3'>
+                            <div className='w-6 h-6 bg-green-600 rounded-full'></div>
+                            <span className='text-sm font-medium text-gray-700'>{note.author}</span>
+                        </div>
+
+                        {/* Description */}
+                        <p className='text-sm text-gray-600 mb-4 flex-grow line-clamp-3'>
+                            {note.description}
+                        </p>
+
+                        {/* Attachments */}
+                        {note.attachments > 0 && (
+                            <div className='mb-4'>
+                                <span className='text-xs text-gray-500 bg-gray-100 px-3 py-1 rounded-full'>
+                                    📎 {note.attachments} Attachment(s)
+                                </span>
+                            </div>
+                        )}
+
+                        {/* Tags */}
+                        <div className='flex flex-wrap gap-2 mb-4'>
+                            {note.tags.map((tag, tagIndex) => (
+                                <span
+                                    key={tagIndex}
+                                    className='text-xs text-green-700 bg-green-50 px-3 py-1 rounded-full font-medium'
+                                >
+                                    #{tag}
+                                </span>
+                            ))}
+                        </div>
+
+                        {/* Divider */}
+                        <div className='border-t border-gray-200 mb-4'></div>
+
+                        {/* Stats and Actions */}
+                        <div className='flex items-center justify-between text-sm text-gray-600'>
+                            <div className='flex items-center gap-4'>
+                                <div className='flex items-center gap-1'>
+                                    <IoHeartOutline size={16} />
+                                    <span>{note.likes}</span>
+                                </div>
+                                <div className='flex items-center gap-1'>
+                                    <PiChatText size={16} />
+                                    <span>{note.comments}</span>
+                                </div>
+                                <div className='flex items-center gap-1'>
+                                    <LuEye size={16} />
+                                    <span>{formatViews(note.views)}</span>
+                                </div>
+                            </div>
+                            <div className='flex items-center gap-2'>
+                                <button className='hover:text-gray-800 transition'>
+                                    <MdOutlineFileDownload size={16} />
+                                </button>
+                                <button className='hover:text-gray-800 transition'>
+                                    <LuBookmarkMinus size={16} />
+                                </button>
                             </div>
                         </div>
-                        <div className='flex flex-row items-center gap-[16px]'>
-                            <button className='cursor-pointer'>
-                                <MdOutlineFileDownload size={14} className='text-[#292D32] ' />
-                            </button>
-                            <button className='cursor-pointer'>
-                                <LuBookmarkMinus size={14} className='text-[#292D32] ' />
-                            </button>
-                        </div>
                     </div>
-                </div>
+                ))}
             </div>
-
         </div>
     )
 }

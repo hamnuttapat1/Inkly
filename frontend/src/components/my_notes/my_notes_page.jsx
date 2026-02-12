@@ -1,44 +1,13 @@
 import React from 'react'
 import { Download, Bookmark, Heart, MessageCircle, Eye } from 'lucide-react'
+import { myNotes } from '../../constants/My_notes_data'
 
 const My_notes_page = () => {
+  // Calculate stats dynamically from myNotes data
   const stats = [
-    { value: '4', label: 'Total notes' },
-    { value: '2113', label: 'Total views' },
-    { value: '400', label: 'Total likes' }
-  ]
-
-  const notes = [
-    {
-      title: 'Biology : Mitosis and Meiosis',
-      author: 'Student 2',
-      description: 'Detailed diagrams and explanations of cell division processes. Comparison between mitosis and meiosis with color-coded phases and...',
-      tags: ['#Biology', '#Cell'],
-      attachments: 3,
-      likes: 222,
-      comments: 34,
-      views: 1132
-    },
-    {
-      title: 'Calculus II - Integration techniques',
-      author: 'Student 1',
-      description: 'Comprehensive notes covering integration by parts, trigonometric substitution, partial fractions, and improper integrals. Includes worked...',
-      tags: ['#Calculus', '#Integration', '#Math'],
-      attachments: 4,
-      likes: 133,
-      comments: 55,
-      views: 334
-    },
-    {
-      title: 'Data Structures : Tree and graph',
-      author: 'Student 3',
-      description: 'Implementation guide for binary trees, BST, AVL trees, and graph traversal algorithms. Includes pseudocode and complexity analysis...',
-      tags: ['#Algorithm', '#Datastructure'],
-      attachments: 0,
-      likes: 24,
-      comments: 2,
-      views: 321
-    }
+    { value: myNotes.length.toString(), label: 'Total notes' },
+    { value: myNotes.reduce((sum, note) => sum + note.views, 0).toString(), label: 'Total views' },
+    { value: myNotes.reduce((sum, note) => sum + note.likes, 0).toString(), label: 'Total likes' }
   ]
 
   return (
@@ -56,8 +25,8 @@ const My_notes_page = () => {
 
         {/* Notes Grid */}
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-          {notes.map((note, index) => (
-            <div key={index} className='bg-white rounded-xl p-6 shadow-sm flex flex-col'>
+          {myNotes.map((note) => (
+            <div key={note.id} className='bg-white rounded-xl p-6 shadow-sm flex flex-col'>
               {/* Title */}
               <h3 className='text-lg font-semibold text-gray-800 mb-3'>{note.title}</h3>
               
@@ -88,7 +57,7 @@ const My_notes_page = () => {
                     key={tagIndex}
                     className='text-xs text-green-700 bg-green-50 px-3 py-1 rounded-full font-medium'
                   >
-                    {tag}
+                    #{tag}
                   </span>
                 ))}
               </div>
