@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { PiBookOpenTextLight } from "react-icons/pi";
 import { AiOutlineFire } from "react-icons/ai";
 import { MdQueryBuilder } from "react-icons/md";
 import { GoThumbsup } from "react-icons/go";
 import { FaRegCalendarTimes } from "react-icons/fa";
+import { useSortContext } from '../../context/SortContext';
 
 const Home_Top_bar = () => {
-  const [sortBy, setSortBy] = useState('hot')
-
-  const buttons = ['hot', 'new', 'top']
+  const { sortBy, setSortBy } = useSortContext();
+  const buttons = ['hot', 'new', 'top'];
 
   return (
     <div className='w-full bg-white shadow-md py-3'>

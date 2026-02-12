@@ -1,14 +1,33 @@
-import React from 'react'
+import React, { useState, useMemo } from 'react'
 import { GiPlainCircle } from "react-icons/gi";
 import { GoPaperclip } from "react-icons/go";
-import { IoHeartOutline } from "react-icons/io5";
+import { IoHeartOutline, IoHeart } from "react-icons/io5";
 import { PiChatText } from "react-icons/pi";
 import { LuEye } from "react-icons/lu";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { LuBookmarkMinus } from "react-icons/lu";
+import { BsBookmarkDashFill } from "react-icons/bs";
 import { otherNotes } from '../../constants/Others_note_data';
+import { useBookmarks } from '../../context/BookmarksContext';
+import { useSortContext } from '../../context/SortContext';
 
 const Home_page = () => {
+    const { toggleBookmark, isBookmarked } = useBookmarks();
+    const { sortBy } = useSortContext();
+
+    // State to track likes for each note
+    const [noteLikes, setNoteLikes] = useState(() => {
+        // Initialize with original like counts
+        const initialLikes = {};
+        otherNotes.forEach(note => {
+            initialLikes[note.id] = {
+                count: note.likes,
+                isLiked: false
+            };
+        });
+        return initialLikes;
+    });
+
     // Helper function to format large numbers (e.g., 1132 -> 1.1k)
     const formatViews = (views) => {
         if (views >= 1000) {
@@ -17,10 +36,48 @@ const Home_page = () => {
         return views.toString();
     };
 
+    // Handle like button click
+    const handleLike = (noteId) => {
+        setNoteLikes(prev => ({
+            ...prev,
+            [noteId]: {
+                count: prev[noteId].isLiked ? prev[noteId].count - 1 : prev[noteId].count + 1,
+                isLiked: !prev[noteId].isLiked
+            }
+        }));
+    };
+
+    // Sort notes based on sortBy state
+    const sortedNotes = useMemo(() => {
+        const notesCopy = [...otherNotes];
+        
+        switch (sortBy) {
+            case 'hot':
+                // Sort by views (highest to lowest)
+                return notesCopy.sort((a, b) => b.views - a.views);
+            
+            case 'top':
+                // Sort by likes (highest to lowest), using current like counts
+                return notesCopy.sort((a, b) => {
+                    const aLikes = noteLikes[a.id]?.count || a.likes;
+                    const bLikes = noteLikes[b.id]?.count || b.likes;
+                    return bLikes - aLikes;
+                });
+            
+            case 'new':
+                // Sort by date (newest first) - assuming notes have a date field
+                // If you don't have a date field, you can sort by ID (higher ID = newer)
+                return notesCopy.sort((a, b) => b.id - a.id);
+            
+            default:
+                return notesCopy;
+        }
+    }, [sortBy, noteLikes]);
+
     return (
         <div className='w-full h-full bg-[#EEF2E1] overflow-auto'>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-8'>
-                {otherNotes.map((note) => (
+                {sortedNotes.map((note) => (
                     <div key={note.id} className='bg-white rounded-xl p-6 shadow-sm flex flex-col'>
                         {/* Title */}
                         <h3 className='text-lg font-semibold text-gray-800 mb-3'>{note.title}</h3>
@@ -63,10 +120,19 @@ const Home_page = () => {
                         {/* Stats and Actions */}
                         <div className='flex items-center justify-between text-sm text-gray-600'>
                             <div className='flex items-center gap-4'>
-                                <div className='flex items-center gap-1'>
-                                    <IoHeartOutline size={16} />
-                                    <span>{note.likes}</span>
-                                </div>
+                                <button 
+                                    onClick={() => handleLike(note.id)}
+                                    className='flex items-center gap-1 hover:text-red-500 transition cursor-pointer'
+                                >
+                                    {noteLikes[note.id]?.isLiked ? (
+                                        <IoHeart size={16} className='text-red-500' />
+                                    ) : (
+                                        <IoHeartOutline size={16} />
+                                    )}
+                                    <span className={noteLikes[note.id]?.isLiked ? 'text-red-500' : ''}>
+                                        {noteLikes[note.id]?.count || note.likes}
+                                    </span>
+                                </button>
                                 <div className='flex items-center gap-1'>
                                     <PiChatText size={16} />
                                     <span>{note.comments}</span>
@@ -80,8 +146,15 @@ const Home_page = () => {
                                 <button className='hover:text-gray-800 transition'>
                                     <MdOutlineFileDownload size={16} />
                                 </button>
-                                <button className='hover:text-gray-800 transition'>
-                                    <LuBookmarkMinus size={16} />
+                                <button 
+                                    onClick={() => toggleBookmark(note)}
+                                    className='hover:text-yellow-500 transition cursor-pointer'
+                                >
+                                    {isBookmarked(note.id) ? (
+                                        <BsBookmarkDashFill size={16} className='text-yellow-400' />
+                                    ) : (
+                                        <LuBookmarkMinus size={16} />
+                                    )}
                                 </button>
                             </div>
                         </div>
