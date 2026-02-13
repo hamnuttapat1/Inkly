@@ -24,6 +24,7 @@ import Edit_profile_page from './components/edit_profile/edit_profile_page'
 import Edit_profile_top_bar from './components/edit_profile/edit_profile_top_bar'
 import { BookmarksProvider } from './context/BookmarksContext'
 import { SortProvider } from './context/SortContext'
+import { MyNotesProvider } from './context/MyNotesContext'
 
 const App = () => {
   return (
@@ -128,17 +129,19 @@ const App = () => {
             <Route
               path="/my_notes"
               element={
-                <div className="flex h-screen overflow-hidden">
-                  <Sidebar />
-                  <div className="flex flex-col flex-1 min-h-0">
-                    <div className="shrink-0">
-                      <Mynotes_top_bar />
-                    </div>
-                    <div className="flex-1 min-h-0 overflow-y-auto">
-                      <MyNotes_page />
+                <MyNotesProvider>
+                  <div className="flex h-screen overflow-hidden">
+                    <Sidebar />
+                    <div className="flex flex-col flex-1 min-h-0">
+                      <div className="shrink-0">
+                        <Mynotes_top_bar />
+                      </div>
+                      <div className="flex-1 min-h-0 overflow-y-auto">
+                        <MyNotes_page />
+                      </div>
                     </div>
                   </div>
-                </div>
+                </MyNotesProvider>
               }
             />
             <Route

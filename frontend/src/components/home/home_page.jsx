@@ -10,10 +10,14 @@ import { BsBookmarkDashFill } from "react-icons/bs";
 import { otherNotes } from '../../constants/Others_note_data';
 import { useBookmarks } from '../../context/BookmarksContext';
 import { useSortContext } from '../../context/SortContext';
+import NoteModal from './NoteModal';
 
 const Home_page = () => {
     const { toggleBookmark, isBookmarked } = useBookmarks();
     const { sortBy } = useSortContext();
+
+    // State for modal
+    const [selectedNote, setSelectedNote] = useState(null);
 
     // State to track likes for each note
     const [noteLikes, setNoteLikes] = useState(() => {
@@ -37,7 +41,8 @@ const Home_page = () => {
     };
 
     // Handle like button click
-    const handleLike = (noteId) => {
+    const handleLike = (noteId, e) => {
+        e.stopPropagation(); // Prevent card click
         setNoteLikes(prev => ({
             ...prev,
             [noteId]: {
@@ -45,6 +50,22 @@ const Home_page = () => {
                 isLiked: !prev[noteId].isLiked
             }
         }));
+    };
+
+    // Handle bookmark click
+    const handleBookmark = (note, e) => {
+        e.stopPropagation(); // Prevent card click
+        toggleBookmark(note);
+    };
+
+    // Handle card click to open modal
+    const handleCardClick = (note) => {
+        setSelectedNote(note);
+    };
+
+    // Close modal
+    const handleCloseModal = () => {
+        setSelectedNote(null);
     };
 
     // Sort notes based on sortBy state
@@ -75,10 +96,19 @@ const Home_page = () => {
     }, [sortBy, noteLikes]);
 
     return (
-        <div className='w-full h-full bg-[#EEF2E1] overflow-auto'>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-8'>
+        <div className='w-full h-full bg-[#EEF2E1] overflow-auto relative'>
+            {/* Blur overlay - only shows when modal is open */}
+            {selectedNote && (
+                <div className="absolute inset-0 backdrop-blur-sm bg-white/30 z-10 pointer-events-none" />
+            )}
+            
+            <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-8 ${selectedNote ? 'relative z-0' : ''}`}>
                 {sortedNotes.map((note) => (
-                    <div key={note.id} className='bg-white rounded-xl p-6 shadow-sm flex flex-col'>
+                    <div 
+                        key={note.id} 
+                        className='bg-white rounded-xl p-6 shadow-sm flex flex-col cursor-pointer hover:shadow-md transition-shadow'
+                        onClick={() => handleCardClick(note)}
+                    >
                         {/* Title */}
                         <h3 className='text-lg font-semibold text-gray-800 mb-3'>{note.title}</h3>
                         
@@ -121,7 +151,7 @@ const Home_page = () => {
                         <div className='flex items-center justify-between text-sm text-gray-600'>
                             <div className='flex items-center gap-4'>
                                 <button 
-                                    onClick={() => handleLike(note.id)}
+                                    onClick={(e) => handleLike(note.id, e)}
                                     className='flex items-center gap-1 hover:text-red-500 transition cursor-pointer'
                                 >
                                     {noteLikes[note.id]?.isLiked ? (
@@ -147,7 +177,7 @@ const Home_page = () => {
                                     <MdOutlineFileDownload size={16} />
                                 </button>
                                 <button 
-                                    onClick={() => toggleBookmark(note)}
+                                    onClick={(e) => handleBookmark(note, e)}
                                     className='hover:text-yellow-500 transition cursor-pointer'
                                 >
                                     {isBookmarked(note.id) ? (
@@ -161,6 +191,11 @@ const Home_page = () => {
                     </div>
                 ))}
             </div>
+
+            {/* Modal */}
+            {selectedNote && (
+                <NoteModal note={selectedNote} onClose={handleCloseModal} />
+            )}
         </div>
     )
 }
