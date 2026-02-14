@@ -170,10 +170,17 @@ const EditNoteModal = ({ note, onClose, onSave }) => {
         onClose();
     };
 
+    // Handle backdrop click - only close if clicking the backdrop itself
+    const handleBackdropClick = (e) => {
+        if (e.target === e.currentTarget) {
+            onClose();
+        }
+    };
+
     return (
         <div 
             className="fixed inset-0 flex items-center justify-center z-50 p-4"
-            onClick={onClose}
+            onClick={handleBackdropClick}
         >
             <div 
                 className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative z-20"
@@ -204,6 +211,7 @@ const EditNoteModal = ({ note, onClose, onSave }) => {
                             name="title"
                             value={formData.title}
                             onChange={handleChange}
+                            onClick={(e) => e.stopPropagation()}
                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                             placeholder="Enter title..."
                         />
@@ -218,6 +226,8 @@ const EditNoteModal = ({ note, onClose, onSave }) => {
                             name="description"
                             value={formData.description}
                             onChange={handleChange}
+                            onClick={(e) => e.stopPropagation()}
+                            onMouseDown={(e) => e.stopPropagation()}
                             rows={6}
                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent resize-none"
                             placeholder="Write your notes here.. You can include explanations, examples, formulas, and anything else that would be helpful."
@@ -236,6 +246,7 @@ const EditNoteModal = ({ note, onClose, onSave }) => {
                                 value={tagInput}
                                 onChange={(e) => setTagInput(e.target.value)}
                                 onKeyPress={handleTagKeyPress}
+                                onClick={(e) => e.stopPropagation()}
                                 className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                                 placeholder="Add Tags (e.g., Calculus, Math, English)"
                             />
