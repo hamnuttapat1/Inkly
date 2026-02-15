@@ -6,11 +6,8 @@ import { MdOutlineFileDownload } from "react-icons/md";
 import { BsBookmarkDashFill } from "react-icons/bs";
 import { useBookmarks } from '../../context/BookmarksContext';
 
-const Bookmarks_page = () => {
+const Bookmarks_page_content = ({ sortBy }) => {
     const { bookmarkedNotes, toggleBookmark } = useBookmarks();
-    
-    // Local sort state
-    const [sortBy, setSortBy] = useState('most_recent');
     
     // State to track likes for each note
     const [noteLikes, setNoteLikes] = useState(() => {
@@ -168,4 +165,4 @@ const Bookmarks_page = () => {
     )
 }
 
-export default Bookmarks_page
+export default Bookmarks_page_content
